@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            color: white;
+            /* background: url('Mountain (1).jpg') no-repeat center center/cover; */
+            width: 100%;
+            height: 650vh;
+        }
+
+        .navbar {
+            width: 100%;
+            height: 10vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar input[type='checkbox'] {
+            opacity: 0;
+        }
+
+        .menu-items {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .menu-items li {
+            list-style: none;
+        }
+
+        .menu-items li a {
+            text-decoration: none;
+            /* color: rgb(238, 245, 223); */
+            color: black;
+            /* font-weight: bolder; */
+            /* font-family: 'Arial Narrow', Arial, sans-serif; */
+            font-family: Georgia, Times, 'Times New Roman', serif;
+            font-size: 1.3rem;
+            /* margin-left: 2rem; */
+        }
+
+        .section2 {
+            /* border: 2px solid white; */
+            width: 100%;
+            height: 70vh;
+            background: url('pooja-head.png') no-repeat center center/cover;
+        }
+
+        .section3 {
+            /* border: 2px solid white; */
+            width: 100%;
+            height: 30vh;
+            display: flex;
+            cursor: pointer;
+        }
+
+        .section3 .button1,
+        .button2 {
+            /* border: 1px solid white; */
+            width: 5%;
+            height: 30vh;
+        }
+
+        .section3-btn {
+            height: 30vh;
+            width: 10vh;
+            background: transparent;
+            border: none;
+            font-size: 2.5rem;
+            color: white;
+            z-index: 1000;
+        }
+
+        .section3-middle {
+            /* border: 1px solid white; */
+            width: 90%;
+            height: 30vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .section3-middle::-webkit-scrollbar {
+            display: none;
+        }
+
+        .section3-middle-images {
+            width: 22vh;
+            height: 22vh;
+            border-radius: 50%;
+            margin-left: 2rem;
+        }
+
+        .section4 {
+            /* border: 2px solid white; */
+            width: 90%;
+            height: 47vh;
+            margin: auto;
+        }
+
+        .section4-first {
+            /* border: 2px solid white; */
+            height: 6vh;
+            width: 100%;
+            display: flex;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+            justify-content: space-between;
+            /* gap: 25rem;  property of flexbox by which we can set a gap between itmes as much we want instead of use margin-left*/
+        }
+
+        .section4-first p {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: black;
+            /* flex-grow: 1;  property of flexbox by which item take the whole available space in this it ha two element so they get into corner  work as justify content space between */
+        }
+
+        .section4-first button {
+            background-color: #b21144;
+            color: white;
+            width: 15vh;
+            height: 5vh;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .section4-second {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .boxes img {
+            /* display: block; */
+            height: 25vh;
+            width: 25vh;
+            border-radius: 5px;
+            /* margin-bottom: 1rem; */
+        }
+
+        .boxes p {
+            /* text-align: center; */
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: black;
+        }
+
+        .boxes button {
+            width: 25vh;
+            height: 4vh;
+            background: #b21144;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .section5{
+            /* border: 2px solid white; */
+            width: 100%;
+            height: 60vh;
+            background: url('pooja-second-image.jpg') no-repeat center center/cover;
+        }
+
+        .section7{
+            /* border: 2px solid black; */
+            width: 100%;
+            height: 60vh;
+            background: url('pooja-gif.gif') no-repeat center center/cover;
+        }
+
+        .section9 {
+            /* border: 2px solid white; */
+            width: 90%;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+        .section9-para {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            font-size: 1.5rem;
+            font-family: 'Arial Narrow', Arial, sans-serif;
+            letter-spacing: 1px;
+            color: black;
+        }
+        .section9-images {
+            display: flex;
+            justify-content: center;
+        }
+        .section9-images img {
+            width: 30vh;
+            height: 30vh;
+        }
+
+        .footer{
+            width: 100%;
+            height: 8vh;
+            background: lightblue;
+            color: black;
+            text-align: center;
+            font-size: 1.3rem;
+            padding-top: 0.6rem;
+        }
+
+        @media only screen and (max-width: 900px) {
+
+            /* ----------------- Navbar design ------------------ */
+            .navbar {
+                /* border: 1px solid white; */
+                margin-top: 2rem;
+                display: block;
+            }
+
+            .navbar input[type='checkbox'] {
+                width: 2rem;
+                height: 2rem;
+                position: absolute;
+                margin-left: 1.5rem;
+                opacity: 0;
+                display: block;
+            }
+
+            .menu-items {
+                /* border: 1px solid white; */
+                margin-top: 1rem;
+                /* display: none; */
+                transform: translateX(-110%);
+                transition: all 0.3s ease-in-out;
+                background: lightblue;
+                padding-bottom: 1rem;
+                padding-top: 1rem;
+                display: block;
+                /* z-index: 1; */
+            }
+
+            .menu-items li {
+                list-style: none;
+                margin: 1.5rem;
+            }
+
+            .menu-items li a {
+                font-size: 1.3rem;
+                font-family: 'Times New Roman', Times, serif;
+                text-decoration: none;
+                color: black;
+            }
+
+            .line {
+                border: 2px solid black;
+                background: black;
+                display: flex;
+                width: 2rem;
+                justify-content: space-around;
+                margin-bottom: 0.5rem;
+                margin-left: 1.5rem;
+                display: block;
+            }
+            .navbar input[type='checkbox']:checked~.menu-items {
+                /* display: block; */
+                transform: translateX(0%);
+            }
+
+            /* .line1{
+            transform-origin: 0% 0%;
+            }
+            .line3{
+            transform-origin: 40% 80%;
+            }
+            .navbar input[type='checkbox']:checked ~ .line1{
+            transform: rotate(40deg);
+            }
+            .navbar input[type='checkbox']:checked ~ .line3{
+            transform: rotate(-45deg);
+            }
+            .navbar input[type='checkbox']:checked ~ .line2{
+            display: none;
+            } */
+
+            /* ------------SECTION 3 ---------------- */
+
+            .section3-btn {
+                /* width: 4vh;
+                font-size: 1rem; */
+                display: none;
+            }
+        }
+
+        @media only screen and (max-width:2300px){
+            .section4-second {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                scroll-behavior: smooth;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+            .section4-second::-webkit-scrollbar {
+                 display: none;
+            }
+            .boxes{
+                /* gap: 2rem; */
+                margin-left: 2rem;
+            }
+
+            .section9{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                scroll-behavior: smooth;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+            .section9::-webkit-scrollbar {
+                 display: none;
+            }   
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <input type="checkbox">
+        <span class="line line1"></span>
+        <span class="line line2"></span>
+        <span class="line line3"></span>
+        <div class="menu-items menu-items-media">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Register</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </div>
+    </div>
+
+    <section class="section2"></section>
+
+    <section class="section3">
+        <div class="button1">
+            <button class="section3-btn">></button>
+        </div>
+        <div class="section3-middle">
+            <img src="Mountain (1).jpg" alt="Snow-Mountain" class="section3-middle-images">
+            <img src="Mountain (2).jpg" alt="Snow-Mountain" class="section3-middle-images">
+            <img src="Mountain (3).jpg" alt="Snow-Mountain" class="section3-middle-images">
+            <img src="Mountain (4).jpg" alt="Snow-Mountain" class="section3-middle-images">
+            <img src="Mountain (1).jpg" alt="Snow-Mountain" class="section3-middle-images">
+            <img src="Mountain (2).jpg" alt="Snow-Mountain" class="section3-middle-images">
+            <img src="Mountain (3).jpg" alt="Snow-Mountain" class="section3-middle-images">
+            <img src="Mountain (4).jpg" alt="Snow-Mountain" class="section3-middle-images">
+            <img src="Mountain (1).jpg" alt="Snow-Mountain" class="section3-middle-images">
+            <img src="Mountain (2).jpg" alt="Snow-Mountain" class="section3-middle-images">
+            <img src="Mountain (3).jpg" alt="Snow-Mountain" class="section3-middle-images">
+            <img src="Mountain (4).jpg" alt="Snow-Mountain" class="section3-middle-images">
+            <img src="Mountain (1).jpg" alt="Snow-Mountain" class="section3-middle-images">
+            <img src="Mountain (2).jpg" alt="Snow-Mountain" class="section3-middle-images">
+            <img src="Mountain (3).jpg" alt="Snow-Mountain" class="section3-middle-images">
+            <img src="Mountain (4).jpg" alt="Snow-Mountain" class="section3-middle-images">
+        </div>
+        <div class="button2">
+            <button class="section3-btn"><</button>
+        </div>
+    </section>
+
+    <!-- ---------section 4 ------------ -->
+    <section class="section4">
+        <div class="section4-first">
+            <p><i>Evil Eye</i></p>
+            <button>VIEW ALL</button>
+        </div>
+        <div class="section4-second">
+            <div class="boxes">
+                <img src="food-menu1.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu2.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu3.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu4.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu5.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu6.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+        </div>
+    </section>
+    <section class="section4">
+        <div class="section4-first">
+            <p><i>Evil Eye</i></p>
+            <button>VIEW ALL</button>
+        </div>
+        <div class="section4-second">
+            <div class="boxes">
+                <img src="food-menu1.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu2.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu3.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu4.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu5.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu6.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+        </div>
+    </section>
+    <section class="section4">
+        <div class="section4-first">
+            <p><i>Evil Eye</i></p>
+            <button>VIEW ALL</button>
+        </div>
+        <div class="section4-second">
+            <div class="boxes">
+                <img src="food-menu1.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu2.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu3.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu4.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu5.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu6.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+        </div>
+    </section>
+    <section class="section4">
+        <div class="section4-first">
+            <p><i>Evil Eye</i></p>
+            <button>VIEW ALL</button>
+        </div>
+        <div class="section4-second">
+            <div class="boxes">
+                <img src="food-menu1.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu2.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu3.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu4.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu5.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu6.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section5"></section>
+    
+    <!-------------------section6------------------->
+    <section class="section4">
+        <div class="section4-first">
+            <p><i>Evil Eye</i></p>
+            <button>VIEW ALL</button>
+        </div>
+        <div class="section4-second">
+            <div class="boxes">
+                <img src="food-menu1.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu2.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu3.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu4.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu5.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu6.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section7"></section>
+
+    <!-- ------------------section8------------------ -->
+    <section class="section4">
+        <div class="section4-first">
+            <p><i>Evil Eye</i></p>
+            <button>VIEW ALL</button>
+        </div>
+        <div class="section4-second">
+            <div class="boxes">
+                <img src="food-menu1.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu2.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu3.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu4.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu5.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu6.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+        </div>
+    </section>
+    <section class="section4">
+        <div class="section4-first">
+            <p><i>Evil Eye</i></p>
+            <button>VIEW ALL</button>
+        </div>
+        <div class="section4-second">
+            <div class="boxes">
+                <img src="food-menu1.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu2.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu3.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu4.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu5.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+            <div class="boxes">
+                <img src="food-menu6.jpg" alt="">
+                <p><i>Aroma Incense Collec</i></p>
+                <button>ADD TO CART</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section9">
+        <div class="section9-para">
+            <p>@ Follow us on Instagram</p>
+        </div>
+        <div class="section9-images">
+            <img src="Mountain (1).jpg" alt="">
+            <img src="Mountain (2).jpg" alt="">
+            <img src="Mountain (3).jpg" alt="">
+            <img src="Mountain (4).jpg" alt="">
+            <img src="Mountain (1).jpg" alt="">
+            <img src="Mountain (2).jpg" alt="">
+        </div>
+    </section>
+
+    <footer class="footer">&copy 2022, All Rights Reserved.</footer>
+
+</body>
+
+</html>
